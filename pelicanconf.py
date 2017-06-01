@@ -2,9 +2,16 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'JGL'
-SITENAME = "JGL's Blog"
-#SITEURL = 'http://jglwiz.github.io'
+AUTHOR = 'Jimmy Jiang'
+SITENAME = "Jimmy Jiang's Blog"
+SITEURL = 'http://localhost:8000'
+SITESUBTITLE = 'Software Engineer'
+# SITELOGO = '//s.gravatar.com/avatar/9544bbb3a7e40cbcade687ded264c5ea?s=80'
+SITELOGO = '/extra/sitelogo.ico'
+ITEDESCRIPTION = '%s\'s Thoughts and Writings' % AUTHOR
+PYGMENTS_STYLE = 'monokai'
+
+FAVICON = '/extra/favicon.ico'
 
 PATH = 'content'
 
@@ -27,8 +34,8 @@ AUTHOR_FEED_RSS = None
 LINKS = ()
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = ( ('github', 'https://github.com/jglwiz'),)
+
 
 DEFAULT_PAGINATION = 10
 
@@ -43,3 +50,9 @@ PLUGINS = ['ipynb.markup']
 # THEME
 THEME = 'Flex'
 LOAD_CONTENT_CACHE = False
+
+# comment 
+DISQUS_SITENAME = 'jglwiz-blog'
+
+# static paths
+STATIC_PATHS = ['images', 'extra']
