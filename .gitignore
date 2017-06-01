@@ -1,0 +1,9 @@
+
+.idea/
+__pycache__/
+output/
+
+*.un~
+.ipynb_checkpoints
+.cache
+.vs
