@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'JGL'
 SITENAME = "JGL's Blog"
-SITEURL = 'http://jglwiz.github.io'
+#SITEURL = 'http://jglwiz.github.io'
 
 PATH = 'content'
 
@@ -40,5 +40,6 @@ PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
 
 # THEME
-# THEME = 'pelican-blueidea'
-THEME = '/home/j/workspace/pelican-themes/pelican-blue'
+THEME = 'Flex'
+
+LOAD_CONTENT_CACHE = False
