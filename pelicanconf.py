@@ -38,3 +38,7 @@ MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
+
+# THEME
+# THEME = 'pelican-blueidea'
+THEME = '/home/j/workspace/pelican-themes/pelican-blue'
