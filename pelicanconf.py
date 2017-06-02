@@ -6,12 +6,10 @@ AUTHOR = 'Jimmy Jiang'
 SITENAME = "Jimmy Jiang's Blog"
 SITEURL = 'http://localhost:8000'
 SITESUBTITLE = 'Software Engineer'
-# SITELOGO = '//s.gravatar.com/avatar/9544bbb3a7e40cbcade687ded264c5ea?s=80'
 SITELOGO = '/extra/sitelogo.ico'
+FAVICON = '/extra/sitelogo.ico'
 ITEDESCRIPTION = '%s\'s Thoughts and Writings' % AUTHOR
 PYGMENTS_STYLE = 'monokai'
-
-FAVICON = '/extra/favicon.ico'
 
 PATH = 'content'
 
