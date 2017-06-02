@@ -4,13 +4,12 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="https://jglwiz.github.io/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="https://jglwiz.github.io/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="https://jglwiz.github.io/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
 
-    <link href="https://jglwiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jimmy's Lab Atom">
 
 
     <link rel="shortcut icon" href="/extra/sitelogo.ico" type="image/x-icon">
@@ -31,15 +30,15 @@
 <meta property="og:title" content="Debug the build of pelican blog"/>
 <meta property="og:description" content="This post offers a few additional explanation to this tutorial:Building a data science portfolio, which provides useful infommation for a beginner to start a pelican blog from scratch on github pages. 1. Repos&#39; structure The original reading suggests the use of ghp-import, to make the blog publishing program and …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://jglwiz.github.io/debug-the-build-of-pelican-blog.html"/>
+<meta property="og:url" content="/debug-the-build-of-pelican-blog.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2017-06-02 14:38:00+08:00"/>
 <meta property="article:modified_time" content="2017-06-02 14:38:00+08:00"/>
-<meta property="article:author" content="https://jglwiz.github.io/author/jimmy-jiang.html">
+<meta property="article:author" content="/author/jimmy-jiang.html">
 <meta property="article:section" content="pelican"/>
 <meta property="article:tag" content="pelican"/>
 <meta property="article:tag" content="github"/>
-<meta property="og:image" content="https://jglwiz.github.io/">
+<meta property="og:image" content="/">
 
   <title>Jimmy's Lab &ndash; Debug the build of pelican blog</title>
 
@@ -47,16 +46,16 @@
 <body>
   <aside>
     <div>
-      <a href="https://jglwiz.github.io">
+      <a href="">
         <img src="/extra/sitelogo.ico" alt="" title="">
       </a>
-      <h1><a href="https://jglwiz.github.io"></a></h1>
+      <h1><a href=""></a></h1>
 
 <p>Algorihtm Engineer</p>
       <nav>
         <ul class="list">
-          <li><a href="https://jglwiz.github.io/pages/about.html#about">About</a></li>
-          <li><a href="https://jglwiz.github.io/pages/contact.html#contact">Contact</a></li>
+          <li><a href="/pages/about.html#about">About</a></li>
+          <li><a href="/pages/contact.html#contact">Contact</a></li>
 
         </ul>
       </nav>
@@ -76,7 +75,7 @@
       
     <h1 id="debug-the-build-of-pelican-blog">Debug the build of pelican blog</h1>
     <p>
-          Posted on Fri 02 June 2017 in <a href="https://jglwiz.github.io/category/pelican.html">pelican</a>
+          Posted on Fri 02 June 2017 in <a href="/category/pelican.html">pelican</a>
 
 
     </p>
@@ -107,18 +106,21 @@ git remote add origin git@github.com:username/blog.git
 
 
 <p>5) check the submodule. The following command will show git remote url.</p>
+<p>check the root folder: </p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> blog
 git remote show origin
+</pre></div>
 
-:::bash
-<span class="nb">cd</span> output
+
+<p>check the output folder:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> output
 git remote show origin
 </pre></div>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://jglwiz.github.io/tag/pelican.html">pelican</a>
-      <a href="https://jglwiz.github.io/tag/github.html">github</a>
+      <a href="/tag/pelican.html">pelican</a>
+      <a href="/tag/github.html">github</a>
     </p>
   </div>
 
@@ -159,7 +161,7 @@ git remote show origin
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Jimmy's Lab ",
-  "url" : "https://jglwiz.github.io",
+  "url" : "",
   "image": "/extra/sitelogo.ico",
   "description": ""
 }
