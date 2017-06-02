@@ -7,7 +7,7 @@
 &lt;p&gt;A better solution is to put them into different github repos. Put the blog publishing program into blog repo, and the output folder into username.github.io repo as submodule of blog repo.&lt;/p&gt;
 &lt;p&gt;1) Create two repositories in Github with names such as username.github.io and  blog&lt;/p&gt;
 &lt;p&gt;2) Setup your full blog folder in the blog repo (git@github.com:username/blog.git)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd your_blog_folder
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; your_blog_folder
 git remote add origin git@github.com:username/blog.git
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -18,8 +18,8 @@ git remote add origin git@github.com:username/blog.git
 
 
 &lt;p&gt;4) change the config file in publishconf.py otherwise the output folder would be deleted each time runing 'make publish` by default&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# DELETE_OUTPUT_DIRECTORY = True
-DELETE_OUTPUT_DIRECTORY = False
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# DELETE_OUTPUT_DIRECTORY = True&lt;/span&gt;
+&lt;span class="n"&gt;DELETE_OUTPUT_DIRECTORY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -27,6 +27,7 @@ DELETE_OUTPUT_DIRECTORY = False
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; blog
 git remote show origin
 
+:::bash
 &lt;span class="nb"&gt;cd&lt;/span&gt; output
 git remote show origin
 &lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="github"></category></entry><entry><title>First Post</title><link href="https://jglwiz.github.io/first-post.html" rel="alternate"></link><published>2016-06-08T20:00:00+08:00</published><updated>2016-06-08T20:00:00+08:00</updated><author><name>me</name></author><id>tag:jglwiz.github.io,2016-06-08:/first-post.html</id><summary type="html">

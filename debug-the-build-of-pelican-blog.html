@@ -90,7 +90,7 @@
 <p>A better solution is to put them into different github repos. Put the blog publishing program into blog repo, and the output folder into username.github.io repo as submodule of blog repo.</p>
 <p>1) Create two repositories in Github with names such as username.github.io and  blog</p>
 <p>2) Setup your full blog folder in the blog repo (git@github.com:username/blog.git)</p>
-<div class="highlight"><pre><span></span>cd your_blog_folder
+<div class="highlight"><pre><span></span><span class="nb">cd</span> your_blog_folder
 git remote add origin git@github.com:username/blog.git
 </pre></div>
 
@@ -101,8 +101,8 @@ git remote add origin git@github.com:username/blog.git
 
 
 <p>4) change the config file in publishconf.py otherwise the output folder would be deleted each time runing 'make publish` by default</p>
-<div class="highlight"><pre><span></span># DELETE_OUTPUT_DIRECTORY = True
-DELETE_OUTPUT_DIRECTORY = False
+<div class="highlight"><pre><span></span><span class="c1"># DELETE_OUTPUT_DIRECTORY = True</span>
+<span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 
 
@@ -110,6 +110,7 @@ DELETE_OUTPUT_DIRECTORY = False
 <div class="highlight"><pre><span></span><span class="nb">cd</span> blog
 git remote show origin
 
+:::bash
 <span class="nb">cd</span> output
 git remote show origin
 </pre></div>
