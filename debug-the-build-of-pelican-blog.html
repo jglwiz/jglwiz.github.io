@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="https://jglwiz.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://jglwiz.github.io/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://jglwiz.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://jglwiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jimmy's Lab Atom">
+
+
+    <link rel="shortcut icon" href="/extra/sitelogo.ico" type="image/x-icon">
+    <link rel="icon" href="/extra/sitelogo.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Jimmy Jiang" />
+<meta name="description" content="This post offers a few additional explanation to this tutorial:Building a data science portfolio, which provides useful infommation for a beginner to start a pelican blog from scratch on github pages. 1. Repos&#39; structure The original reading suggests the use of ghp-import, to make the blog publishing program and …" />
+<meta name="keywords" content="pelican, github">
+
+<meta property="og:site_name" content="Jimmy's Lab"/>
+<meta property="og:title" content="Debug the build of pelican blog"/>
+<meta property="og:description" content="This post offers a few additional explanation to this tutorial:Building a data science portfolio, which provides useful infommation for a beginner to start a pelican blog from scratch on github pages. 1. Repos&#39; structure The original reading suggests the use of ghp-import, to make the blog publishing program and …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://jglwiz.github.io/debug-the-build-of-pelican-blog.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-06-02 14:38:00+08:00"/>
+<meta property="article:modified_time" content="2017-06-02 14:38:00+08:00"/>
+<meta property="article:author" content="https://jglwiz.github.io/author/jimmy-jiang.html">
+<meta property="article:section" content="pelican"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="article:tag" content="github"/>
+<meta property="og:image" content="https://jglwiz.github.io/">
+
+  <title>Jimmy's Lab &ndash; Debug the build of pelican blog</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://jglwiz.github.io">
+        <img src="/extra/sitelogo.ico" alt="" title="">
+      </a>
+      <h1><a href="https://jglwiz.github.io"></a></h1>
+
+<p>Algorihtm Engineer</p>
+      <nav>
+        <ul class="list">
+          <li><a href="https://jglwiz.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://jglwiz.github.io/pages/contact.html#contact">Contact</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-github" href="https://github.com/jglwiz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="debug-the-build-of-pelican-blog">Debug the build of pelican blog</h1>
+    <p>
+          Posted on Fri 02 June 2017 in <a href="https://jglwiz.github.io/category/pelican.html">pelican</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This post offers a few additional explanation to this <a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">tutorial:Building a data science portfolio</a>, which provides useful infommation for a beginner to start a pelican blog from scratch on github pages. </p>
+<h2>1. Repos' structure</h2>
+<p>The original reading suggests the use of ghp-import, to make the blog publishing program and output in the same github repo. (master branch for output folder, dev branch for publishing program).</p>
+<p>A better solution is to put them into different github repos. Put the blog publishing program into blog repo, and the output folder into username.github.io repo as submodule of blog repo.</p>
+<p>1) Create two repositories in Github with names such as username.github.io and  blog</p>
+<p>2) Setup your full blog folder in the blog repo (git@github.com:username/blog.git)</p>
+<div class="highlight"><pre><span></span>cd your_blog_folder
+git remote add origin git@github.com:username/blog.git
+</pre></div>
+
+
+<p>3) Setup your output folder using username.github.io (git@github.com:username/username.github.io.git)</p>
+<div class="highlight"><pre><span></span>git submodule add git@github.com:username/username.github.io.git output
+</pre></div>
+
+
+<p>4) change the config file in publishconf.py otherwise the output folder would be deleted each time runing 'make publish` by default</p>
+<div class="highlight"><pre><span></span># DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = False
+</pre></div>
+
+
+<p>5) check the submodule. The following command will show git remote url.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> blog
+git remote show origin
+
+<span class="nb">cd</span> output
+git remote show origin
+</pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://jglwiz.github.io/tag/pelican.html">pelican</a>
+      <a href="https://jglwiz.github.io/tag/github.html">github</a>
+    </p>
+  </div>
+
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jglwiz-blog';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+<!-- End Disqus -->
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Jimmy's Lab ",
+  "url" : "https://jglwiz.github.io",
+  "image": "/extra/sitelogo.ico",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

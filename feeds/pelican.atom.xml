@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jimmy's Lab - pelican</title><link href="https://jglwiz.github.io/" rel="alternate"></link><link href="https://jglwiz.github.io/feeds/pelican.atom.xml" rel="self"></link><id>https://jglwiz.github.io/</id><updated>2017-06-02T14:38:00+08:00</updated><entry><title>Debug the build of pelican blog</title><link href="https://jglwiz.github.io/debug-the-build-of-pelican-blog.html" rel="alternate"></link><published>2017-06-02T14:38:00+08:00</published><updated>2017-06-02T14:38:00+08:00</updated><author><name>Jimmy Jiang</name></author><id>tag:jglwiz.github.io,2017-06-02:/debug-the-build-of-pelican-blog.html</id><summary type="html">&lt;p&gt;This post offers a few additional explanation to this &lt;a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/"&gt;tutorial:Building a data science portfolio&lt;/a&gt;, which provides useful infommation for a beginner to start a pelican blog from scratch on github pages. &lt;/p&gt;
+&lt;h2&gt;1. Repos' structure&lt;/h2&gt;
+&lt;p&gt;The original reading suggests the use of ghp-import, to make the blog publishing program and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post offers a few additional explanation to this &lt;a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/"&gt;tutorial:Building a data science portfolio&lt;/a&gt;, which provides useful infommation for a beginner to start a pelican blog from scratch on github pages. &lt;/p&gt;
+&lt;h2&gt;1. Repos' structure&lt;/h2&gt;
+&lt;p&gt;The original reading suggests the use of ghp-import, to make the blog publishing program and output in the same github repo. (master branch for output folder, dev branch for publishing program).&lt;/p&gt;
+&lt;p&gt;A better solution is to put them into different github repos. Put the blog publishing program into blog repo, and the output folder into username.github.io repo as submodule of blog repo.&lt;/p&gt;
+&lt;p&gt;1) Create two repositories in Github with names such as username.github.io and  blog&lt;/p&gt;
+&lt;p&gt;2) Setup your full blog folder in the blog repo (git@github.com:username/blog.git)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd your_blog_folder
+git remote add origin git@github.com:username/blog.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;3) Setup your output folder using username.github.io (git@github.com:username/username.github.io.git)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add git@github.com:username/username.github.io.git output
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4) change the config file in publishconf.py otherwise the output folder would be deleted each time runing 'make publish` by default&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = False
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;5) check the submodule. The following command will show git remote url.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; blog
+git remote show origin
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; output
+git remote show origin
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="github"></category></entry></feed>
